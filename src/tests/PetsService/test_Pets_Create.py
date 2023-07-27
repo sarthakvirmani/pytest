@@ -5,7 +5,7 @@ from src.utils.StringUtil import *
 
 
 @allure.title("Validate API Response For Create Pet Request")
-def test_createPet():
+def test_create_pet():
     url = get_URL("CREATE_PET_SERVICE")
     jsonbody = get_JsonData("PetsService.yml", "pet_service")
     jsonbody['name'] = generate_random_string_alphanumeric(6)
@@ -16,7 +16,7 @@ def test_createPet():
     assert_equal(jsonbody,response,"Created and Provided JSONs are not same")
 
 @allure.title("Validate API response for incorrect uri in create pet request")
-def test_createPet_Invalid_URI():
+def test_create_pet_invalid_uri():
     url = get_URL("CREATE_PET_SERVICE")
     invalid = [generate_random_string_lowercase(4), generate_random_string_alphanumeric(4),
                generate_random_string_uppercase(4), str(get_random_number_between(1, 999))]
@@ -26,12 +26,12 @@ def test_createPet_Invalid_URI():
         postRequest(url, json=jsonbody, statuscode=404)
 
 @allure.title("Validate API response for invalid HTTP Method")
-def test_createPet_Invalid_HTTP_Method():
+def test_create_pet_invalid_http_method():
     url = get_URL("CREATE_PET_SERVICE")
     response=getRequest(url,statuscode=405)
 
-@allure.title("Validate API response for invalid Pet Name")
-def test_createPet_Invalid_Name():
+@allure.title("Validate API response for invalid Pet Id")
+def test_create_pet_invalid_id():
     url = get_URL("CREATE_PET_SERVICE")
     jsonbody = get_JsonData("PetsService.yml", "pet_service")
     jsonbody['id'] = generate_random_string_alphanumeric(6)

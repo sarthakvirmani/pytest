@@ -37,6 +37,7 @@ def test_validate_updated_pet_status():
                 assert_equal(response['status'], "sold", "Pet status is not updated correctly.")
 
 @allure.title("Get Pet By Invalid Status And Validate Status Code")
+##Test case is failing as API is taking any value for PET Status
 def test_get_pet_by_invalid_status():
     invalid_statuses = [generate_random_string_lowercase(4), generate_random_string_alphanumeric(4),
                generate_random_string_uppercase(4), str(get_random_number_between(1, 999))]

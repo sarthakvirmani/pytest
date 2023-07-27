@@ -16,7 +16,7 @@ def Insert_Pet():
     return response['id']
 
 @allure.title("Validate API Response For Update Pet Status Request")
-def test_updatePetStatus():
+def test_update_pet_status():
     id=Insert_Pet()
     url = get_URL("UPDATE_PET_SERVICE")
     jsonbody = get_JsonData("PetsService.yml", "pet_service")
@@ -27,7 +27,7 @@ def test_updatePetStatus():
         putRequest(url,jsonbody)
 
 @allure.title("Validate API Response For Update Photo URLs)")
-def test_updatePet_PhotoURL():
+def test_update_pet_photo_url():
     id=Insert_Pet()
     url = get_URL("UPDATE_PET_SERVICE")
     jsonbody = get_JsonData("PetsService.yml", "pet_service")
@@ -37,7 +37,7 @@ def test_updatePet_PhotoURL():
     putRequest(url,jsonbody)
 
 @allure.title("Validate API response for incorrect uri in update pet request")
-def test_updatePet_Invalid_URI():
+def test_update_pet_invalid_uri():
     id = Insert_Pet()
     url = get_URL("UPDATE_PET_SERVICE")
     invalid = [generate_random_string_lowercase(4), generate_random_string_alphanumeric(4),
