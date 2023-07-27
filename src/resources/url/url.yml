@@ -1,0 +1,15 @@
+#=============================================================================
+#                  PETS SERVICE
+#=============================================================================
+CREATE_PET_SERVICE: /pet
+GET_PET_BY_STATUS_SERVICE: /pet/findByStatus?status=
+UPDATE_PET_SERVICE: /pet/
+#=============================================================================
+#                   TAGGING SERVICE
+#=============================================================================
+CREATE_DYNAMICTAGS: /api/taggingService/v1/dynamic-tag?appid=cns&componentid=tags
+DELETE_DYNAMICTAGS: /api/taggingService/v1/delete-tag?id=
+CREATE_STATICTAGS: /api/taggingService/v1/static-tag
+DELETE_STATICTAGS: /api/taggingService/v1/delete-tag?id=
+EDIT_STATICTAGS: /api/taggingService/v1/static-tag?id=
+GET_STATICTAGS: /api/taggingService/v1/get-tags?

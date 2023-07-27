@@ -1,0 +1,11 @@
+pet_service : {
+  "id": 0,
+  "category": {
+    "id": 0,
+    "name": "string"
+  },
+  "name": '',
+  "photoUrls": [],
+  "tags": [],
+  "status": "available"
+}
